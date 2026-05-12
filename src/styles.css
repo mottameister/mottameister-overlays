@@ -25,7 +25,8 @@ body {
   }
 
   .pixel-panel {
-    @apply border-4 border-bark bg-root/88;
+    @apply border-4 border-bark;
+    background-color: rgba(42, 26, 16, 0.88);
     clip-path: polygon(
       0 12px,
       12px 12px,
@@ -60,7 +61,8 @@ body {
   }
 
   .pixel-chip {
-    @apply flex items-center gap-3 border-2 border-bark bg-night/78 px-4 py-2 font-display text-lg shadow-insetPixel;
+    @apply flex items-center gap-3 border-2 border-bark px-4 py-2 font-display text-lg shadow-insetPixel;
+    background-color: rgba(18, 13, 9, 0.78);
   }
 
   .camera-frame {
