@@ -94,10 +94,10 @@ body {
 
   .gameplay-camera-ring {
     position: absolute;
-    top: 190px;
-    right: 124px;
-    width: 318px;
-    height: 318px;
+    top: 166px;
+    right: 96px;
+    width: 382px;
+    height: 382px;
     border-radius: 9999px;
     isolation: isolate;
   }
@@ -113,16 +113,16 @@ body {
     background: conic-gradient(
       from 0deg,
       rgba(181, 23, 255, 0.95),
-      rgba(255, 79, 216, 0.92),
       rgba(67, 217, 255, 0.95),
-      rgba(255, 191, 56, 0.72),
+      rgba(181, 23, 255, 0.94),
+      rgba(67, 217, 255, 0.95),
       rgba(181, 23, 255, 0.95)
     );
-    filter: blur(9px);
-    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 30px), #000 calc(100% - 29px));
-    mask: radial-gradient(farthest-side, transparent calc(100% - 30px), #000 calc(100% - 29px));
-    opacity: 0.86;
-    animation: ring-spin 7s linear infinite, ring-breathe 3.8s ease-in-out infinite;
+    filter: blur(10px);
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 32px), #000 calc(100% - 31px));
+    mask: radial-gradient(farthest-side, transparent calc(100% - 32px), #000 calc(100% - 31px));
+    opacity: 0.78;
+    animation: ring-spin 7.5s linear infinite, ring-breathe 4.4s ease-in-out infinite;
   }
 
   .gameplay-camera-ring__core {
@@ -130,18 +130,18 @@ body {
       conic-gradient(
         from 120deg,
         #b517ff,
-        #ff4fd8 28%,
-        #43d9ff 56%,
-        #ffbf38 76%,
+        #43d9ff 34%,
+        #1b5cff 54%,
+        #43d9ff 72%,
         #b517ff
       );
     box-shadow:
-      0 0 26px rgba(181, 23, 255, 0.52),
-      0 0 46px rgba(67, 217, 255, 0.28),
+      0 0 24px rgba(181, 23, 255, 0.48),
+      0 0 48px rgba(67, 217, 255, 0.3),
       inset 0 0 0 2px rgba(247, 242, 255, 0.48);
-    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 20px), #000 calc(100% - 19px));
-    mask: radial-gradient(farthest-side, transparent calc(100% - 20px), #000 calc(100% - 19px));
-    animation: ring-spin 10s linear infinite reverse;
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 22px), #000 calc(100% - 21px));
+    mask: radial-gradient(farthest-side, transparent calc(100% - 22px), #000 calc(100% - 21px));
+    animation: ring-spin 8.5s linear infinite reverse;
   }
 
   .gameplay-camera-ring__core::before {
@@ -164,28 +164,6 @@ body {
     box-shadow: 0 0 0 999px transparent;
   }
 
-  .gameplay-camera-ring__spark {
-    position: absolute;
-    width: 34px;
-    height: 10px;
-    border-radius: 999px;
-    background: #f7f2ff;
-    box-shadow: 0 0 18px rgba(247, 242, 255, 0.8), 0 0 28px rgba(67, 217, 255, 0.58);
-    transform-origin: 159px 159px;
-    animation: spark-orbit 4.8s linear infinite;
-  }
-
-  .gameplay-camera-ring__spark--one {
-    left: 142px;
-    top: -2px;
-  }
-
-  .gameplay-camera-ring__spark--two {
-    bottom: -2px;
-    right: 142px;
-    animation-delay: -2.4s;
-    opacity: 0.72;
-  }
 }
 
 @keyframes ring-spin {
@@ -204,11 +182,5 @@ body {
   50% {
     opacity: 0.98;
     scale: 1.018;
-  }
-}
-
-@keyframes spark-orbit {
-  to {
-    transform: rotate(360deg);
   }
 }

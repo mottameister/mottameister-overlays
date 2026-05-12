@@ -11,8 +11,6 @@ export default function Gameplay() {
       >
         <div className="gameplay-camera-ring__halo" />
         <div className="gameplay-camera-ring__core" />
-        <div className="gameplay-camera-ring__spark gameplay-camera-ring__spark--one" />
-        <div className="gameplay-camera-ring__spark gameplay-camera-ring__spark--two" />
       </motion.div>
     </main>
   );
