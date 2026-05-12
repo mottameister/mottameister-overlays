@@ -164,6 +164,91 @@ body {
     box-shadow: 0 0 0 999px transparent;
   }
 
+  .browser-camera-frame {
+    position: absolute;
+    right: 76px;
+    bottom: 76px;
+    width: 520px;
+    height: 330px;
+    border-radius: 34px;
+    isolation: isolate;
+  }
+
+  .browser-camera-frame__glow,
+  .browser-camera-frame__edge {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+
+  .browser-camera-frame__glow {
+    background: linear-gradient(135deg, rgba(181, 23, 255, 0.72), rgba(67, 217, 255, 0.72), rgba(181, 23, 255, 0.72));
+    filter: blur(14px);
+    opacity: 0.76;
+    padding: 18px;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: frame-breathe 4s ease-in-out infinite;
+  }
+
+  .browser-camera-frame__edge {
+    border: 8px solid transparent;
+    background:
+      linear-gradient(rgba(9, 7, 17, 0), rgba(9, 7, 17, 0)) padding-box,
+      linear-gradient(135deg, #b517ff, #43d9ff 46%, #1b5cff 64%, #b517ff) border-box;
+    box-shadow:
+      inset 0 0 0 2px rgba(247, 242, 255, 0.16),
+      0 0 24px rgba(181, 23, 255, 0.34),
+      0 0 42px rgba(67, 217, 255, 0.18);
+    animation: frame-shift 7s linear infinite;
+  }
+
+  .browser-camera-frame__corner {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    border-color: rgba(247, 242, 255, 0.56);
+    filter: drop-shadow(0 0 10px rgba(67, 217, 255, 0.52));
+  }
+
+  .browser-camera-frame__corner--tl {
+    left: -8px;
+    top: -8px;
+    border-left: 4px solid;
+    border-top: 4px solid;
+    border-top-left-radius: 34px;
+  }
+
+  .browser-camera-frame__corner--tr {
+    right: -8px;
+    top: -8px;
+    border-right: 4px solid;
+    border-top: 4px solid;
+    border-top-right-radius: 34px;
+  }
+
+  .browser-camera-frame__corner--bl {
+    left: -8px;
+    bottom: -8px;
+    border-left: 4px solid;
+    border-bottom: 4px solid;
+    border-bottom-left-radius: 34px;
+  }
+
+  .browser-camera-frame__corner--br {
+    right: -8px;
+    bottom: -8px;
+    border-right: 4px solid;
+    border-bottom: 4px solid;
+    border-bottom-right-radius: 34px;
+  }
+
 }
 
 @keyframes ring-spin {
@@ -182,5 +267,24 @@ body {
   50% {
     opacity: 0.98;
     scale: 1.018;
+  }
+}
+
+@keyframes frame-breathe {
+  0%,
+  100% {
+    opacity: 0.52;
+    scale: 0.992;
+  }
+
+  50% {
+    opacity: 0.92;
+    scale: 1.01;
+  }
+}
+
+@keyframes frame-shift {
+  to {
+    filter: hue-rotate(360deg);
   }
 }

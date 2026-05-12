@@ -9,6 +9,7 @@ Projeto Vite + React + Tailwind para overlays de livestream do `@mottameister`, 
 - `/ending`
 - `/offline`
 - `/camera`
+- `/browser-camera`
 - `/gameplay`
 - `/chat`
 - `/goal`
@@ -22,6 +23,7 @@ https://mottameister-overlays.vercel.app/brb
 https://mottameister-overlays.vercel.app/ending
 https://mottameister-overlays.vercel.app/offline
 https://mottameister-overlays.vercel.app/camera
+https://mottameister-overlays.vercel.app/browser-camera
 https://mottameister-overlays.vercel.app/gameplay
 https://mottameister-overlays.vercel.app/chat
 https://mottameister-overlays.vercel.app/goal
@@ -56,7 +58,7 @@ Eles ainda não puxam dados reais da Twitch, StreamElements ou Streamlabs. Para 
 4. Defina `Altura` como `1080`.
 5. Ative `Atualizar navegador quando a cena se tornar ativa`.
 6. Para `/alerts`, ative `Desligar fonte quando não visível` se quiser que a animação de entrada reinicie.
-7. Use `/gameplay`, `/camera`, `/chat`, `/goal` e `/alerts` como camadas transparentes sobre gameplay/camera.
+7. Use `/gameplay`, `/camera`, `/browser-camera`, `/chat`, `/goal` e `/alerts` como camadas transparentes sobre gameplay/camera.
 
 ## Desenvolvimento Local
 

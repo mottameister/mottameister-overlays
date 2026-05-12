@@ -4,6 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import AppShell from './routes/AppShell.jsx';
 import Alerts from './routes/Alerts.jsx';
 import Brb from './routes/Brb.jsx';
+import BrowserCamera from './routes/BrowserCamera.jsx';
 import Camera from './routes/Camera.jsx';
 import Chat from './routes/Chat.jsx';
 import Ending from './routes/Ending.jsx';
@@ -24,6 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/ending" element={<Ending />} />
           <Route path="/offline" element={<Offline />} />
           <Route path="/camera" element={<Camera />} />
+          <Route path="/browser-camera" element={<BrowserCamera />} />
           <Route path="/gameplay" element={<Gameplay />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/goal" element={<Goal />} />
