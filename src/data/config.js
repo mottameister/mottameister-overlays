@@ -18,7 +18,7 @@ export const streamConfig = {
   scenes: {
     starting: {
       eyebrow: 'Preparando a live',
-      title: 'Já já começa',
+      title: 'Já vai começar',
       subtitle: 'Acendendo as luzes da Toca da Coruja. Pega uma água, um snack, abre o Discord e cola com a gente.',
       timerLabel: 'Entrando ao vivo em instantes',
     },
