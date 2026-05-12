@@ -16,7 +16,7 @@ export default function Goal() {
       >
         <div className="mb-5 flex items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <Flame className="h-8 w-8 text-ember" />
+            <Flame className="h-8 w-8 text-pink" />
             <h1 className="font-display text-4xl text-honey">{label}</h1>
           </div>
           <p className="font-display text-3xl text-parchment">
@@ -25,7 +25,7 @@ export default function Goal() {
         </div>
         <div className="h-12 bg-night/70 p-2 shadow-insetPixel">
           <motion.div
-            className="h-full bg-[linear-gradient(90deg,#8f5529,#f2a23a,#ffd98b)]"
+            className="h-full bg-[linear-gradient(90deg,#b517ff,#ff4fd8,#43d9ff)]"
             initial={{ width: 0 }}
             animate={{ width: `${percent}%` }}
             transition={{ duration: 1.4, ease: 'easeOut' }}

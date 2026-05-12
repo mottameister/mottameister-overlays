@@ -12,7 +12,7 @@ export default function Chat() {
         transition={{ duration: 0.55 }}
       >
         <header className="mb-5 flex items-center gap-3 border-b border-honey/20 pb-4">
-          <MessageCircle className="h-7 w-7 text-ember" />
+          <MessageCircle className="h-7 w-7 text-cyan" />
           <h1 className="font-display text-4xl text-honey">{streamConfig.chat.title}</h1>
         </header>
         <div className="space-y-4">
@@ -24,7 +24,7 @@ export default function Chat() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.14 }}
             >
-              <p className="mb-1 font-display text-xl text-ember">{message.user}</p>
+              <p className="mb-1 font-display text-xl text-cyan">{message.user}</p>
               <p className="text-xl leading-snug text-parchment">{message.text}</p>
             </motion.article>
           ))}

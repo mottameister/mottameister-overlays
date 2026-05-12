@@ -1,8 +1,8 @@
-# A Toca da Coruja Stream Overlays
+# Overlays da Toca da Coruja
 
-Vite + React + Tailwind livestream overlay pack for OBS Browser Source at `1920x1080`.
+Projeto Vite + React + Tailwind para overlays de livestream do `@mottameister`, pensado para OBS Browser Source em `1920x1080`.
 
-## Routes
+## Rotas
 
 - `/starting`
 - `/brb`
@@ -13,59 +13,72 @@ Vite + React + Tailwind livestream overlay pack for OBS Browser Source at `1920x
 - `/goal`
 - `/alerts`
 
-## Customize Text
+## Links de Produção
 
-All stream copy, social handles, chat sample messages, alert sample text, and goal values live in:
+```txt
+https://mottameister-overlays.vercel.app/starting
+https://mottameister-overlays.vercel.app/brb
+https://mottameister-overlays.vercel.app/ending
+https://mottameister-overlays.vercel.app/offline
+https://mottameister-overlays.vercel.app/camera
+https://mottameister-overlays.vercel.app/chat
+https://mottameister-overlays.vercel.app/goal
+https://mottameister-overlays.vercel.app/alerts
+```
+
+## Como Alterar Textos
+
+Todos os textos da live, redes sociais, mensagens de exemplo, alerta e meta ficam em:
 
 ```txt
 src/data/config.js
 ```
 
-## Local Development
+Altere esse arquivo, faça commit/push na `main`, e a Vercel publica uma nova versão automaticamente.
 
-Use Node.js 20 or newer.
+## Chat, Meta e Alertas
+
+Hoje `/chat`, `/goal` e `/alerts` são overlays visuais estáticos, prontos para compor cenas no OBS:
+
+- `/chat`: mostra mensagens de exemplo configuradas em `src/data/config.js`.
+- `/goal`: mostra a meta atual configurada em `streamConfig.goal`.
+- `/alerts`: mostra um alerta de exemplo configurado em `streamConfig.scenes.alerts`.
+
+Eles ainda não puxam dados reais da Twitch, StreamElements ou Streamlabs. Para dados ao vivo, use widgets oficiais desses serviços por cima/por baixo desses overlays, ou conecte uma integração futura via WebSocket/API.
+
+## OBS Browser Source
+
+1. Adicione uma nova fonte `Navegador`.
+2. Use uma das URLs de produção acima.
+3. Defina `Largura` como `1920`.
+4. Defina `Altura` como `1080`.
+5. Ative `Atualizar navegador quando a cena se tornar ativa`.
+6. Para `/alerts`, ative `Desligar fonte quando não visível` se quiser que a animação de entrada reinicie.
+7. Use `/camera`, `/chat`, `/goal` e `/alerts` como camadas transparentes sobre gameplay/camera.
+
+## Desenvolvimento Local
+
+Use Node.js 20 ou mais recente.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open the route you want, for example:
+Exemplo local:
 
 ```txt
 http://localhost:5173/starting
 ```
 
-## OBS Browser Source
+## Deploy na Vercel
 
-1. Add a new `Browser Source` in OBS.
-2. Set the URL to the overlay route, such as `http://localhost:5173/starting`.
-3. Set `Width` to `1920`.
-4. Set `Height` to `1080`.
-5. Enable `Refresh browser when scene becomes active`.
-6. Keep `Shutdown source when not visible` enabled for alerts or animated widgets if you want the entrance animation to replay.
-7. Use `/camera`, `/chat`, `/goal`, or `/alerts` as transparent overlay layers above gameplay or camera scenes.
+O projeto está conectado à Vercel via GitHub. Pushes na branch `main` disparam deploy de produção.
 
-For deployed overlays, use your Vercel URL plus the route, for example:
+Configuração:
 
-```txt
-https://your-project.vercel.app/starting
-```
+- Framework: `Vite`
+- Build command: `npm run build`
+- Output directory: `dist`
 
-## Vercel Deployment
-
-1. Push this project to GitHub.
-2. Import the repository in Vercel.
-3. Keep the default Vite settings:
-   - Build command: `npm run build`
-   - Output directory: `dist`
-4. Deploy.
-
-The included `vercel.json` rewrites all routes to `index.html`, so direct OBS URLs like `/starting` and `/alerts` work after deployment.
-
-## Production Build
-
-```bash
-npm run build
-npm run preview
-```
+O `vercel.json` já redireciona todas as rotas para `index.html`, então links diretos como `/starting` e `/alerts` funcionam no OBS.

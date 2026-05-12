@@ -11,7 +11,7 @@ export default function SceneFrame({ scene, align = 'center', children }) {
     <main className="overlay-screen px-20 py-16">
       <div className="absolute left-12 top-10 text-parchment/70">
         <p className="font-display text-3xl text-honey">{streamConfig.brand.name}</p>
-        <p className="text-sm uppercase tracking-[0.22em] text-ember/70">{streamConfig.brand.englishName}</p>
+        <p className="text-sm uppercase tracking-[0.22em] text-cyan/80">{streamConfig.brand.englishName}</p>
       </div>
       <SocialRail />
       <motion.section
@@ -22,8 +22,8 @@ export default function SceneFrame({ scene, align = 'center', children }) {
       >
         <OwlMark />
         <div className="mt-12 max-w-5xl">
-          <p className="mb-5 font-display text-2xl uppercase tracking-[0.18em] text-ember">{copy.eyebrow}</p>
-          <h1 className="font-display text-[116px] font-black leading-none text-parchment drop-shadow-[0_8px_0_rgba(75,47,29,0.75)]">
+          <p className="mb-5 font-display text-2xl uppercase tracking-[0.18em] text-cyan">{copy.eyebrow}</p>
+          <h1 className="font-display text-[116px] font-black leading-none text-parchment drop-shadow-[0_8px_0_rgba(181,23,255,0.42)]">
             {copy.title}
           </h1>
           <p className="mx-auto mt-7 max-w-3xl text-3xl leading-snug text-honey/90">{copy.subtitle}</p>

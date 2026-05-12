@@ -10,8 +10,8 @@ export default function AppShell() {
     <div className="relative h-screen w-screen overflow-hidden bg-transparent text-parchment">
       {hasSceneBackdrop && (
         <>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(242,162,58,0.16),transparent_38%),linear-gradient(135deg,#120d09_0%,#21140d_48%,#16231a_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(246,230,191,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(246,230,191,0.035)_1px,transparent_1px)] bg-[length:24px_24px]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_12%,rgba(181,23,255,0.35),transparent_36%),radial-gradient(circle_at_86%_20%,rgba(67,217,255,0.24),transparent_42%),radial-gradient(circle_at_50%_78%,rgba(255,79,216,0.15),transparent_48%),linear-gradient(180deg,#05030a_0%,#090711_56%,#0c0816_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(247,242,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(247,242,255,0.035)_1px,transparent_1px)] bg-[length:24px_24px]" />
           <Topography />
           <Particles />
         </>

@@ -15,7 +15,7 @@ export default function Camera() {
           <OwlMark compact />
           <div>
             <p className="font-display text-4xl text-honey">{streamConfig.brand.name}</p>
-            <p className="text-lg uppercase tracking-[0.2em] text-ember/80">Camera Nest</p>
+            <p className="text-lg uppercase tracking-[0.2em] text-cyan/80">Camera da Toca</p>
           </div>
         </div>
         <div className="absolute bottom-8 right-8 pixel-panel px-8 py-4">

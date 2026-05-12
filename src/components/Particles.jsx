@@ -12,7 +12,7 @@ export default function Particles() {
       {particles.map((particle) => (
         <span
           key={particle.id}
-          className={`absolute ${particle.size} animate-twinkle bg-ember/70 shadow-[0_0_14px_rgba(242,162,58,0.55)]`}
+          className={`absolute ${particle.size} animate-twinkle bg-cyan/70 shadow-[0_0_16px_rgba(67,217,255,0.62)]`}
           style={{ left: particle.left, top: particle.top, animationDelay: particle.delay }}
         />
       ))}

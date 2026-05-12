@@ -15,10 +15,10 @@ export default function Alerts() {
       >
         <OwlMark compact />
         <div>
-          <p className="font-display text-2xl uppercase tracking-[0.2em] text-ember">{copy.eyebrow}</p>
+          <p className="font-display text-2xl uppercase tracking-[0.2em] text-cyan">{copy.eyebrow}</p>
           <h1 className="mt-1 font-display text-6xl text-honey">{copy.title}</h1>
           <p className="mt-3 text-3xl text-parchment">
-            <span className="font-display text-ember">{copy.sampleName}</span> {copy.sampleAction}
+            <span className="font-display text-pink">{copy.sampleName}</span> {copy.sampleAction}
           </p>
           <p className="mt-2 text-xl text-honey/80">{copy.subtitle}</p>
         </div>
