@@ -81,6 +81,26 @@ Para regenerar as artes, rode:
 powershell -ExecutionPolicy Bypass -File .\scripts\generate-twitch-panels.ps1
 ```
 
+## Currency Da Twitch
+
+A currency visual `Penas de Coruja` fica em:
+
+```txt
+assets/twitch-currency/penas-de-coruja/png
+```
+
+Foram exportadas versões em `28x28`, `56x56` e `112x112`, com a imagem fonte em:
+
+```txt
+assets/twitch-currency/penas-de-coruja/source/pena.png
+```
+
+Para regenerar os tamanhos, rode:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\generate-twitch-currency.ps1
+```
+
 ## Chat, Meta E Alertas
 
 Hoje `/chat`, `/goal` e `/alerts` são overlays visuais estáticos.
