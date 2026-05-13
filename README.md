@@ -129,6 +129,20 @@ Cada recompensa tem versoes em `28x28`, `56x56` e `112x112`. Os desenhos usam si
 powershell -ExecutionPolicy Bypass -File .\scripts\generate-twitch-custom-rewards.ps1
 ```
 
+## Emotes Da Twitch
+
+Os emotes novos do canal ficam em:
+
+```txt
+assets/twitch-emotes/png
+```
+
+O primeiro pacote foi exportado em `1000x1000`, com preview em:
+
+```txt
+assets/twitch-emotes/preview.png
+```
+
 ## Chat, Meta E Alertas
 
 Hoje `/chat`, `/goal` e `/alerts` são overlays visuais estáticos.
