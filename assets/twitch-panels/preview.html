@@ -1,0 +1,37 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Twitch panels - mottameister</title>
+  <style>
+    :root { color-scheme: dark; --bg: #080a10; --fg: #f7fbff; --muted: #8c94a7; --cyan: #39f5ff; --mag: #c13cff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 15% 10%, rgba(193,60,255,.16), transparent 28%), radial-gradient(circle at 85% 20%, rgba(57,245,255,.13), transparent 26%), var(--bg); color: var(--fg); font-family: Segoe UI, Arial, sans-serif; }
+    main { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 40px 0; }
+    h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: 0; }
+    p { margin: 0 0 28px; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; align-items: start; }
+    figure { margin: 0; padding: 12px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.08); border-radius: 8px; }
+    img { display: block; width: 320px; max-width: 100%; height: auto; image-rendering: auto; }
+    figcaption { margin-top: 8px; color: var(--muted); font-size: 12px; }
+    code { color: var(--cyan); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>mottameister Twitch panels</h1>
+    <p>PNGs em <code>png/</code>, SVGs editÃ¡veis em <code>svg/</code>. Tamanho base: 320x80.</p>
+    <section class="grid">
+      <figure><img src="png/sobre.png" alt="SOBRE"><figcaption>SOBRE</figcaption></figure>
+      <figure><img src="png/discord.png" alt="DISCORD"><figcaption>DISCORD</figcaption></figure>
+      <figure><img src="png/redes.png" alt="REDES"><figcaption>REDES</figcaption></figure>
+      <figure><img src="png/setup.png" alt="SETUP"><figcaption>SETUP</figcaption></figure>
+      <figure><img src="png/donate.png" alt="DONATE"><figcaption>DONATE</figcaption></figure>
+      <figure><img src="png/regras.png" alt="REGRAS"><figcaption>REGRAS</figcaption></figure>
+      <figure><img src="png/spotify.png" alt="SPOTIFY"><figcaption>SPOTIFY</figcaption></figure>
+      <figure><img src="png/nft.png" alt="NFT"><figcaption>NFT</figcaption></figure>
+    </section>
+  </main>
+</body>
+</html>

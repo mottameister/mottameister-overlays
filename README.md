@@ -61,6 +61,26 @@ Ali ficam:
 
 Depois de alterar, basta fazer commit e push na branch `main`. A Vercel publica a nova versão automaticamente.
 
+## Painéis Da Twitch
+
+As imagens dos painéis da página da Twitch ficam em:
+
+```txt
+assets/twitch-panels/png
+```
+
+Também há SVGs editáveis e uma prévia geral em:
+
+```txt
+assets/twitch-panels
+```
+
+Para regenerar as artes, rode:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\generate-twitch-panels.ps1
+```
+
 ## Chat, Meta E Alertas
 
 Hoje `/chat`, `/goal` e `/alerts` são overlays visuais estáticos.

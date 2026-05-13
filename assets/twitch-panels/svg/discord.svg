@@ -1,0 +1,23 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="320" height="80" viewBox="0 0 320 80" role="img" aria-label="DISCORD Twitch panel">
+  <defs>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#111622"/>
+      <stop offset="1" stop-color="#1A2233"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-60%" width="180%" height="220%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="320" height="80" fill="#080A10"/>
+  <rect x="10" y="10" width="300" height="60" rx="8" fill="url(#panel)" stroke="#7B4DFF" stroke-width="2"/>
+  <path d="M14 17H72M250 63H304M16 66H39M286 14L304 32" fill="none" stroke="#39F5FF" stroke-width="2" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M87 20V60" stroke="#5B6476" stroke-width="1"/>
+  <g transform="translate(0 0)" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <path d="M24 20h32a8 8 0 0 1 8 8v18a8 8 0 0 1-8 8H31l-6 13v-13h-1a8 8 0 0 1-8-8V28a8 8 0 0 1 8-8M27 34h26M27 43h18" stroke="#7B4DFF" stroke-width="3"/>
+  </g>
+  <text x="108" y="48" fill="#F7FBFF" stroke="#05070D" stroke-width="3" paint-order="stroke fill" font-size="31" font-weight="900" font-family="Segoe UI Black, Arial Black, sans-serif" filter="url(#glow)">DISCORD</text>
+</svg>
