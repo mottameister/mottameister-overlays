@@ -115,6 +115,20 @@ Cada recompensa tem versoes em `28x28`, `56x56` e `112x112`. Para regenerar:
 powershell -ExecutionPolicy Bypass -File .\scripts\generate-twitch-reward-icons.ps1
 ```
 
+## Icones De Recompensas Personalizadas
+
+Os icones pixelados para recompensas personalizadas ficam em:
+
+```txt
+assets/twitch-custom-rewards/png
+```
+
+Cada recompensa tem versoes em `28x28`, `56x56` e `112x112`. Os desenhos usam simbolos genericos para evitar criaturas ou itens oficiais de franquias. Para regenerar:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\generate-twitch-custom-rewards.ps1
+```
+
 ## Chat, Meta E Alertas
 
 Hoje `/chat`, `/goal` e `/alerts` são overlays visuais estáticos.
