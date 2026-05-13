@@ -101,6 +101,20 @@ Para regenerar os tamanhos, rode:
 powershell -ExecutionPolicy Bypass -File .\scripts\generate-twitch-currency.ps1
 ```
 
+## Icones De Recompensas Da Twitch
+
+Os icones das recompensas ficam em:
+
+```txt
+assets/twitch-rewards/png
+```
+
+Cada recompensa tem versoes em `28x28`, `56x56` e `112x112`. Para regenerar:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\generate-twitch-reward-icons.ps1
+```
+
 ## Chat, Meta E Alertas
 
 Hoje `/chat`, `/goal` e `/alerts` são overlays visuais estáticos.
