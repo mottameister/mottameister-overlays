@@ -251,8 +251,8 @@ Configuração recomendada no OBS:
 - Source visual: `https://mottameister-overlays.vercel.app/chat`
 - Tamanho da source visual: `1920x1080`
 - Source do Streamer.bot Chat: URL copiada em `Chat > Settings > Overlay`
-- Tamanho da source do chat real: `388x184`
-- Posição aproximada do chat real dentro da tela: `X 90`, `Y 824`
+- Tamanho da source do chat real: `524x214`
+- Posição aproximada do chat real dentro da tela: `X 92`, `Y 820`
 
 CSS recomendado para a source do Streamer.bot Chat no OBS:
 
