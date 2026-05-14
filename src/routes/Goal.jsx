@@ -11,11 +11,19 @@ const desiredGoalEvents = {
 
 export default function Goal() {
   const fallbackGoal = streamConfig.goal;
+  const params = new URLSearchParams(window.location.search);
+  const urlGoal = {
+    label: params.get('label') || fallbackGoal.label,
+    current: toNumber(params.get('current'), fallbackGoal.current),
+    target: toNumber(params.get('target'), fallbackGoal.target),
+    unit: params.get('unit') || fallbackGoal.unit,
+  };
+  const hasUrlGoal = ['label', 'current', 'target', 'unit'].some((key) => params.has(key));
   const [goal, setGoal] = useState({
-    label: fallbackGoal.label,
-    current: fallbackGoal.current,
-    target: fallbackGoal.target,
-    unit: fallbackGoal.unit,
+    label: urlGoal.label,
+    current: urlGoal.current,
+    target: urlGoal.target,
+    unit: urlGoal.unit,
   });
   const [status, setStatus] = useState('conectando');
   const socketRef = useRef(null);
@@ -31,6 +39,11 @@ export default function Goal() {
   );
 
   useEffect(() => {
+    if (hasUrlGoal) {
+      setStatus('url manual');
+      return undefined;
+    }
+
     let reconnectTimer;
     let refreshTimer;
     let closed = false;
@@ -118,7 +131,7 @@ export default function Goal() {
       window.clearInterval(refreshTimer);
       socketRef.current?.close();
     };
-  }, [variableByRequestId]);
+  }, [hasUrlGoal, variableByRequestId]);
 
   const { label, current, target, unit } = goal;
   const percent = target > 0 ? Math.min(100, Math.round((current / target) * 100)) : 0;

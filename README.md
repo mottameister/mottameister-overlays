@@ -283,6 +283,12 @@ No OBS:
 - Alertas: `https://mottameister-overlays.vercel.app/alerts`
 - Ambas em `1920x1080`
 
+Se quiser configurar a meta manualmente direto pela URL do OBS:
+
+```txt
+https://mottameister-overlays.vercel.app/goal?current=72&target=100&label=Meta%20da%20Comunidade&unit=subs
+```
+
 Variáveis globais persistidas para `/goal`:
 
 - `overlayGoalCurrent`: valor atual da meta
