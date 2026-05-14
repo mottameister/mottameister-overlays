@@ -10,6 +10,7 @@ import Chat from './routes/Chat.jsx';
 import Ending from './routes/Ending.jsx';
 import Goal from './routes/Goal.jsx';
 import Gameplay from './routes/Gameplay.jsx';
+import Music from './routes/Music.jsx';
 import Offline from './routes/Offline.jsx';
 import Starting from './routes/Starting.jsx';
 import './styles.css';
@@ -30,6 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/chat" element={<Chat />} />
           <Route path="/goal" element={<Goal />} />
           <Route path="/alerts" element={<Alerts />} />
+          <Route path="/music" element={<Music />} />
         </Route>
       </Routes>
     </BrowserRouter>

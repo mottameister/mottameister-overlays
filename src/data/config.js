@@ -62,4 +62,10 @@ export const streamConfig = {
     target: 100,
     unit: 'subs',
   },
+  music: {
+    title: 'Música da live',
+    artist: 'Artista',
+    album: 'Spotify',
+    cover: '',
+  },
 };

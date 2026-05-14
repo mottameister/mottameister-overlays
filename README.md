@@ -14,6 +14,7 @@ https://mottameister-overlays.vercel.app/offline
 https://mottameister-overlays.vercel.app/camera
 https://mottameister-overlays.vercel.app/browser-camera
 https://mottameister-overlays.vercel.app/gameplay
+https://mottameister-overlays.vercel.app/music
 https://mottameister-overlays.vercel.app/chat
 https://mottameister-overlays.vercel.app/goal
 https://mottameister-overlays.vercel.app/alerts
@@ -28,6 +29,7 @@ https://mottameister-overlays.vercel.app/alerts
 - `/camera`: moldura grande para cena dedicada de câmera.
 - `/browser-camera`: moldura retangular, quadrada e sem texto, para câmera sobre navegador ou cenas genéricas.
 - `/gameplay`: anel circular transparente para a câmera da cena principal de gameplay.
+- `/music`: overlay transparente para mostrar música atual, artista e capa.
 - `/chat`: visual estático de chat.
 - `/goal`: visual estático de meta.
 - `/alerts`: visual estático de alerta.
@@ -42,6 +44,43 @@ https://mottameister-overlays.vercel.app/alerts
 6. Em overlays animados, como `/alerts`, também pode ativar `Desligar fonte quando não visível` para reiniciar a animação.
 
 As rotas `/gameplay`, `/browser-camera`, `/camera`, `/chat`, `/goal` e `/alerts` têm fundo transparente para ficarem por cima da gameplay, câmera ou navegador.
+
+## Música Do Spotify
+
+A rota `/music` mostra uma caixinha com capa, título, artista e barra de progresso.
+
+Exemplo manual:
+
+```txt
+https://mottameister-overlays.vercel.app/music?title=Nome%20da%20Musica&artist=Artista&cover=https%3A%2F%2Fexemplo.com%2Fcapa.jpg
+```
+
+Para ficar dinâmico durante a live, a overlay precisa receber os dados da música atual. Existem dois caminhos:
+
+- Atualizar a URL da fonte no OBS via Streamer.bot, SAMMI ou automação parecida, preenchendo `title`, `artist` e `cover`.
+- Servir um JSON externo e passar ele como `source`.
+
+Formato do JSON:
+
+```json
+{
+  "title": "Nome da música",
+  "artist": "Nome do artista",
+  "album": "Nome do álbum",
+  "cover": "https://url-da-capa.jpg",
+  "isPlaying": true,
+  "progress": 45000,
+  "duration": 180000
+}
+```
+
+URL com JSON:
+
+```txt
+https://mottameister-overlays.vercel.app/music?source=https%3A%2F%2Fseu-endpoint.com%2Fnow-playing.json
+```
+
+Observação: o Spotify não libera a música atual publicamente sem autenticação. Para integração real, use um app/automação que leia o Spotify e envie esses dados para a overlay.
 
 ## Como Alterar Textos
 
