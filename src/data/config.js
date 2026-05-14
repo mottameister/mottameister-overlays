@@ -61,6 +61,20 @@ export const streamConfig = {
     current: 68,
     target: 100,
     unit: 'subs',
+    variables: {
+      current: 'overlayGoalCurrent',
+      target: 'overlayGoalTarget',
+      label: 'overlayGoalLabel',
+      unit: 'overlayGoalUnit',
+    },
+  },
+  streamerbot: {
+    host: '127.0.0.1',
+    port: 8080,
+    endpoint: '/',
+    secure: false,
+    alertDuration: 7600,
+    goalRefreshMs: 5000,
   },
   music: {
     title: 'Música da live',

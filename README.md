@@ -264,7 +264,63 @@ body {
 }
 ```
 
-As rotas `/goal` e `/alerts` seguem como overlays visuais estáticos para usar junto de widgets reais, se quiser.
+## Meta E Alertas Via Streamer.bot
+
+As rotas `/goal` e `/alerts` agora centralizam no Streamer.bot WebSocket.
+
+Configuração base no Streamer.bot:
+
+- `Servers / Clients > WebSocket Server`
+- `Auto Start`: ligado
+- `Address`: `127.0.0.1`
+- `Port`: `8080`
+- `Endpoint`: `/`
+- `Authentication`: desligado
+
+No OBS:
+
+- Meta: `https://mottameister-overlays.vercel.app/goal`
+- Alertas: `https://mottameister-overlays.vercel.app/alerts`
+- Ambas em `1920x1080`
+
+Variáveis globais persistidas para `/goal`:
+
+- `overlayGoalCurrent`: valor atual da meta
+- `overlayGoalTarget`: valor final da meta
+- `overlayGoalLabel`: nome da meta
+- `overlayGoalUnit`: unidade exibida, como `subs`, `follows` ou `apoios`
+
+O `/goal` atualiza sozinho a cada poucos segundos. Também aceita evento customizado com `event: "overlayGoal"` ou `event: "goal"`.
+
+Os alertas escutam eventos nativos disponíveis no Streamer.bot para Twitch, YouTube e Kick. Para alertas 100% customizados, crie uma Action no Streamer.bot e use C#:
+
+```csharp
+string json = @"{
+  ""event"": ""overlayAlert"",
+  ""source"": ""Twitch"",
+  ""kind"": ""sub"",
+  ""eyebrow"": ""Novo sub"",
+  ""title"": ""Apoio desbloqueado"",
+  ""user"": ""%userName%"",
+  ""message"": ""assinou o canal""
+}";
+
+CPH.WebsocketBroadcastJson(json);
+```
+
+Para testar a meta por evento customizado:
+
+```csharp
+string json = @"{
+  ""event"": ""overlayGoal"",
+  ""label"": ""Meta da Comunidade"",
+  ""current"": 72,
+  ""target"": 100,
+  ""unit"": ""subs""
+}";
+
+CPH.WebsocketBroadcastJson(json);
+```
 
 ## Desenvolvimento Local
 
