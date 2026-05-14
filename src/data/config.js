@@ -67,5 +67,6 @@ export const streamConfig = {
     artist: 'Artista',
     album: 'Spotify',
     cover: '',
+    source: '/api/spotify/now-playing',
   },
 };

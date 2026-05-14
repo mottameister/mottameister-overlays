@@ -55,7 +55,53 @@ Exemplo manual:
 https://mottameister-overlays.vercel.app/music?title=Nome%20da%20Musica&artist=Artista&cover=https%3A%2F%2Fexemplo.com%2Fcapa.jpg
 ```
 
-Para ficar dinâmico durante a live, a overlay precisa receber os dados da música atual. Existem dois caminhos:
+Por padrão, `/music` tenta buscar a música atual em:
+
+```txt
+/api/spotify/now-playing
+```
+
+Para isso funcionar, configure a integração Spotify na Vercel.
+
+## Integração Spotify
+
+1. Crie um app em `developer.spotify.com`.
+2. Configure este Redirect URI no app do Spotify:
+
+```txt
+https://mottameister-overlays.vercel.app/api/spotify/callback
+```
+
+3. Na Vercel, adicione as variáveis de ambiente:
+
+```txt
+SPOTIFY_CLIENT_ID
+SPOTIFY_CLIENT_SECRET
+SPOTIFY_REDIRECT_URI=https://mottameister-overlays.vercel.app/api/spotify/callback
+```
+
+4. Faça redeploy.
+5. Abra esta URL e faça login no Spotify:
+
+```txt
+https://mottameister-overlays.vercel.app/api/spotify/login
+```
+
+6. A página vai mostrar um `refresh_token`.
+7. Copie esse valor para uma nova variável na Vercel:
+
+```txt
+SPOTIFY_REFRESH_TOKEN
+```
+
+8. Faça redeploy de novo.
+9. Use no OBS:
+
+```txt
+https://mottameister-overlays.vercel.app/music
+```
+
+Outros caminhos possíveis:
 
 - Atualizar a URL da fonte no OBS via Streamer.bot, SAMMI ou automação parecida, preenchendo `title`, `artist` e `cover`.
 - Servir um JSON externo e passar ele como `source`.

@@ -15,7 +15,8 @@ const normalizeTrack = (track) => ({
 
 export default function Music() {
   const params = useMemo(() => new URLSearchParams(window.location.search), []);
-  const source = params.get('source');
+  const hasManualTrack = params.has('title') || params.has('artist') || params.has('cover');
+  const source = params.get('source') || (!hasManualTrack ? streamConfig.music.source : '');
   const [track, setTrack] = useState(() =>
     normalizeTrack({
       title: params.get('title'),
