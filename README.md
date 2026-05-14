@@ -228,11 +228,43 @@ O primeiro pacote foi exportado em `1000x1000`, com preview em:
 assets/twitch-emotes/preview.png
 ```
 
-## Chat, Meta E Alertas
+## Chat Real No OBS
 
-Hoje `/chat`, `/goal` e `/alerts` são overlays visuais estáticos.
+Hoje `/chat` funciona como moldura visual para o chat real da live.
 
-Eles não puxam dados reais da Twitch, StreamElements ou Streamlabs ainda. Para dados ao vivo, use widgets oficiais desses serviços no OBS junto com esses overlays, ou implemente uma integração futura via API/WebSocket.
+Use o Streamer.bot Chat como Browser Source separado e encaixe dentro da moldura.
+
+Configuração recomendada do Streamer.bot Chat:
+
+- `Minimum Visible Messages`: `1`
+- `Maximum Visible Messages`: `6`
+- `Message Timeout`: `30` a `45`
+- `Show Platform Icons`: `Always`
+- `Show Timestamps`: desligado
+- `Show Events`: desligado
+- WebSocket host: `127.0.0.1`
+- WebSocket port: `8080`
+- WebSocket endpoint: `/`
+
+Configuração recomendada no OBS:
+
+- Source visual: `https://mottameister-overlays.vercel.app/chat`
+- Tamanho da source visual: `1920x1080`
+- Source do Streamer.bot Chat: URL copiada em `Chat > Settings > Overlay`
+- Tamanho da source do chat real: `388x184`
+- Posição aproximada do chat real dentro da tela: `X 90`, `Y 824`
+
+CSS recomendado para a source do Streamer.bot Chat no OBS:
+
+```css
+body {
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0;
+  overflow: hidden;
+}
+```
+
+As rotas `/goal` e `/alerts` seguem como overlays visuais estáticos para usar junto de widgets reais, se quiser.
 
 ## Desenvolvimento Local
 
